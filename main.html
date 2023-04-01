@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+	<title>Realtime Word Count</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+	<textarea id="evaluatedText" onkeyup="countWords()"></textarea>
+	<h3 id="wordCount">0</h3>
 
+	<script>
+		function countWords() {
+			const text = document.getElementById("evaluatedText").value;
+			const wordCount = text.trim().split(/\s+/).length;
+			document.getElementById("wordCount").innerText = wordCount;
+		}
+	</script>
 </body>
-
 </html>
